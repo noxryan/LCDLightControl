@@ -1,0 +1,6 @@
+[submodule "monitorprofiler"]
+	path = monitorprofiler
+	url = https://code.google.com/p/monitorprofiler/
+[submodule "Windows/monitorprofiler"]
+	path = Windows/monitorprofiler
+	url = https://code.google.com/p/monitorprofiler/

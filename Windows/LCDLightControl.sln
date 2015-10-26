@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCDLightControl", "LCDLightControl\LCDLightControl.csproj", "{3BCFDF79-EFC0-42D3-99F6-F1EA30CDD643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorProfiler", "monitorprofiler\MonitorProfiler.csproj", "{A0D7AB15-18C9-4C85-9F2D-5B6078128B40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbHid", "UsbHid\UsbHid.csproj", "{83BC9702-4192-4654-B359-14CBD71D656E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BCFDF79-EFC0-42D3-99F6-F1EA30CDD643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BCFDF79-EFC0-42D3-99F6-F1EA30CDD643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BCFDF79-EFC0-42D3-99F6-F1EA30CDD643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BCFDF79-EFC0-42D3-99F6-F1EA30CDD643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D7AB15-18C9-4C85-9F2D-5B6078128B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D7AB15-18C9-4C85-9F2D-5B6078128B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D7AB15-18C9-4C85-9F2D-5B6078128B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D7AB15-18C9-4C85-9F2D-5B6078128B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BC9702-4192-4654-B359-14CBD71D656E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BC9702-4192-4654-B359-14CBD71D656E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BC9702-4192-4654-B359-14CBD71D656E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BC9702-4192-4654-B359-14CBD71D656E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
