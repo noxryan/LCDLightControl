@@ -263,5 +263,19 @@ namespace LCDLightControl
             var props = monitorProperties[_currentMonitor];
             monitorProperties[_currentMonitor] = new Tuple<int, bool>(Convert.ToInt32(trkCutoff.Value), props.Item2);
         }
+
+        private void trkBrigtness_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            uint value = (uint)Math.Round(trkBrigtness.Value);
+            _currentMonitor.Brightness.Current = value;
+            NativeMethods.SetMonitorBrightness(_currentMonitor.HPhysicalMonitor, value);
+        }
+
+        private void trkContrast_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            uint value = (uint)Math.Round(trkContrast.Value);
+            _currentMonitor.Contrast.Current = value;
+            NativeMethods.SetMonitorContrast(_currentMonitor.HPhysicalMonitor, value);
+        }
     }
 }
