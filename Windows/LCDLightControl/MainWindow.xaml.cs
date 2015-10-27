@@ -30,6 +30,7 @@ namespace LCDLightControl
         private ManagementEventWatcher w;
         private Timer t;
         private uint lightval = 0;
+        private string mode = "manual";
 
         public MainWindow()
         {
@@ -112,6 +113,7 @@ namespace LCDLightControl
 
         private void radAuto_Checked(object sender, RoutedEventArgs e)
         {
+            mode = "auto";
             if (radManual == null)
                 return;
             radManual.IsChecked = false;
@@ -120,6 +122,7 @@ namespace LCDLightControl
 
         private void radManual_Checked(object sender, RoutedEventArgs e)
         {
+            mode = "manual";
             if (radAuto == null)
                 return;
             radAuto.IsChecked = false;
@@ -154,6 +157,8 @@ namespace LCDLightControl
 
         private void Usb_DataReceived(byte[] data)
         {
+            if (usb.IsDeviceConnected == false)
+                return;
             switch(data[1])
             {
                 case READ_LIGHT_VALUE:
@@ -184,7 +189,7 @@ namespace LCDLightControl
                     MonitorPower.On();
                 }
                 // Auto Mode
-                if(_currentMonitor.SupportsDDC && _currentMonitor.Brightness.Supported && radAuto.IsChecked == true)
+                if(_currentMonitor.SupportsDDC && _currentMonitor.Brightness.Supported && mode == "auto")
                 {
                     double scale = _currentMonitor.Brightness.Max / MAX_LIGHT_VALUE;
                     Application.Current.Dispatcher.Invoke(new Action(() =>
