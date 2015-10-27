@@ -26,10 +26,10 @@
         <GroupBox x:Name="grpControls" Header="Controls" Margin="10,103,10.333,0" VerticalAlignment="Top" Height="89" Grid.ColumnSpan="2">
             <Grid Margin="0">
                 <Label x:Name="lblBrightness" Content="Brightness:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <Slider x:Name="trkBrigtness" HorizontalAlignment="Left" Margin="145,10,10,0" VerticalAlignment="Top" Width="394"/>
+                <Slider x:Name="trkBrigtness" HorizontalAlignment="Left" Margin="145,10,10,0" VerticalAlignment="Top" Width="394" ValueChanged="trkBrigtness_ValueChanged"/>
 
                 <Label x:Name="lblContrast" Content="Contrast:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
-                <Slider x:Name="trkContrast" HorizontalAlignment="Left" Margin="145,39,10,0" VerticalAlignment="Top" Width="394"/>
+                <Slider x:Name="trkContrast" HorizontalAlignment="Left" Margin="145,39,10,0" VerticalAlignment="Top" Width="394" ValueChanged="trkContrast_ValueChanged"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="grpCutoff" Header="Ambient Light Sensor" Margin="10,197,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="115">
