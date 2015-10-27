@@ -171,6 +171,7 @@ namespace LCDLightControl
             if(usb.IsDeviceConnected)
             {
                 usb.SendCommandMessage(READ_LIGHT_VALUE);
+                // Monitor Power
                 var props = monitorProperties[_currentMonitor];
                 if ((MAX_LIGHT_VALUE - lightval) < props.Item1 && props.Item2 == false)
                 {
@@ -182,17 +183,36 @@ namespace LCDLightControl
                     monitorProperties[_currentMonitor] = new Tuple<int, bool>(props.Item1, false);
                     MonitorPower.On();
                 }
+                // Auto Mode
+                if(_currentMonitor.SupportsDDC && _currentMonitor.Brightness.Supported && radAuto.IsChecked == true)
+                {
+                    double scale = _currentMonitor.Brightness.Max / MAX_LIGHT_VALUE;
+                    Application.Current.Dispatcher.Invoke(new Action(() =>
+                    {
+                        trkBrigtness.Value = Math.Round(lightval * scale);
+                    }));
+                }
             }
         }
 
         private void Usb_OnDisConnected()
         {
             t.Stop();
+            Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
+                lblConnected.Visibility = Visibility.Hidden;
+                lblNotConnected.Visibility = Visibility.Visible;
+            }));
         }
 
         private void Usb_OnConnected()
         {
             t.Start();
+            Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
+                lblConnected.Visibility = Visibility.Visible;
+                lblNotConnected.Visibility = Visibility.Hidden;
+            }));
         }
 
 

@@ -34,9 +34,10 @@
         </GroupBox>
         <GroupBox x:Name="grpCutoff" Header="Ambient Light Sensor" Margin="10,197,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="115">
             <Grid Margin="0" RenderTransformOrigin="-0.149,-0.236">
-                <Label x:Name="lblConnected" Content="USB Sensor Connected" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name="lblConnected" Content="USB Sensor Connected" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Visibility="Hidden"/>
+                <Label x:Name="lblNotConnected" Content="USB Sensor Not Connected" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                 <Label x:Name="label1" Content="Light Sensor Value:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.149,-0.11"/>
-                <ProgressBar x:Name="prgLightValue" Height="10" Margin="145,41,10,0" VerticalAlignment="Top" Value="32" ValueChanged="ProgressBar_ValueChanged" Maximum="1023"/>
+                <ProgressBar x:Name="prgLightValue" Height="10" Margin="145,41,10,0" VerticalAlignment="Top" ValueChanged="ProgressBar_ValueChanged" Maximum="1023"/>
                 <Label x:Name="label2" Content="Monitor Cutoff Value:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.737,0.092"/>
                 <Slider x:Name="trkCutoff" Margin="145,63,10,0" VerticalAlignment="Top" Maximum="1023" ValueChanged="trkCutoff_ValueChanged"/>
             </Grid>
